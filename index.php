@@ -11,6 +11,7 @@ require_once("functions.php");
 require_once("site.php");
 require_once("site-categories.php");
 require_once("site-products.php");
+require_once("site-cart.php");
 require_once("admin.php");
 require_once("admin-user.php");
 require_once("admin-categories.php");
