@@ -11,7 +11,7 @@ class User extends Model {
 	public static function getFromSession(){
 		$user = new User();
 
-		if(isset($_SESSION[User::SESSION])&& $_SESSION[User::SESSION]['iduser']>0){
+		if(isset($_SESSION[User::SESSION]) && $_SESSION[User::SESSION]['iduser']>0){
 
 			$user->setData($_SESSION[User::SESSION]);
 			
@@ -30,7 +30,7 @@ class User extends Model {
 		){
 			return false;
 		}else{
-			if($inadmin===true && (bool)$_SESSION[User::SESSION]['inadmin'] ===true ){
+			if($inadmin === true && (bool)$_SESSION[User::SESSION]['inadmin'] === true ){
 				return true;
 			}else if($inadmin === false){
 				return true;
@@ -74,11 +74,13 @@ class User extends Model {
 	{
 		$_SESSION[User::SESSION] = NULL;
 	}
+
 	public static function listAll()
 	{
 		$sql = new Sql();
 		return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.desperson");
 	}
+
 	public function save()
 	{
 		$sql = new Sql();
@@ -92,6 +94,7 @@ class User extends Model {
 		));
 		$this->setData($results[0]);
 	}
+
 	public function get($iduser)
 	{
 		$sql = new Sql();
@@ -100,6 +103,7 @@ class User extends Model {
 		));
 		$this->setData($results[0]);
 	}
+
 	public function update()
 	{
 		$sql = new Sql();
@@ -114,6 +118,7 @@ class User extends Model {
 		));
 		$this->setData($results[0]);		
 	}
+
 	public function delete()
 	{
 		$sql = new Sql();
