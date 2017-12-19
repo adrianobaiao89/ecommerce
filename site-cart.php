@@ -70,11 +70,11 @@ $app->get("/cart", function(){
 	
 	$app->post("/cart/freight", function(){
 	
-		$nrzipcode = str_replace("-", "", $_POST['zipcode']);
+		
 	
 		$cart = Cart::getFromSession();
 	
-		$cart->setFreight($nrzipcode);
+		$cart->setFreight($_POST['zipcode']);
 	
 		header("Location: /cart");
 		exit;
