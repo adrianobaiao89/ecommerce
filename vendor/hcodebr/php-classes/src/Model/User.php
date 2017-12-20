@@ -328,9 +328,7 @@ class User extends Model {
 	{
 
 		$msg = (isset($_SESSION[User::ERROR]) && $_SESSION[User::ERROR]) ? $_SESSION[User::ERROR] : '';
-
 		User::clearError();
-
 		return $msg;
 
 	}
@@ -338,7 +336,7 @@ class User extends Model {
 	public static function clearError()
 	{
 
-		$_SESSION[User::SUCCESS] = NULL;
+		$_SESSION[User::ERROR] = NULL;
 
 	}
 
@@ -353,9 +351,7 @@ class User extends Model {
 	{
 
 		$msg = (isset($_SESSION[User::SUCCESS]) && $_SESSION[User::SUCCESS]) ? $_SESSION[User::SUCCESS] : '';
-
 		User::clearSuccess();
-
 		return $msg;
 
 	}
