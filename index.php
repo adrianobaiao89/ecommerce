@@ -14,6 +14,8 @@ require_once("site-products.php");
 require_once("site-cart.php");
 require_once("site-checkout.php");
 require_once("site-admin.php");
+require_once("site-profile.php");
+require_once("site-boleto.php");
 require_once("admin.php");
 require_once("admin-user.php");
 require_once("admin-categories.php");
